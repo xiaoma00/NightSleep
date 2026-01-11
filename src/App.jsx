@@ -254,8 +254,8 @@ export default function App() {
     };
 
     return (
-      <div className="min-h-screen bg-slate-950 text-slate-200 p-6 font-sans">
-        <header className="flex items-center mb-8">
+      <div className="screen-vh bg-slate-950 text-slate-200 p-4 sm:p-6 font-sans overflow-hidden">
+        <header className="flex items-center mb-6 sm:mb-8">
           <button onClick={() => setView('home')} className="p-2 -ml-2 text-slate-400 hover:text-white">
             <ChevronLeft size={28} />
           </button>
@@ -307,9 +307,9 @@ export default function App() {
   // 1. ASSESSMENT
   if (view === 'assessment') {
     return (
-      <div className="min-h-screen bg-black text-amber-500 p-6 flex flex-col font-sans relative">
+      <div className="screen-vh bg-black text-amber-500 p-4 sm:p-6 flex flex-col font-sans relative overflow-hidden">
         <ResetButton />
-        <h2 className="text-2xl font-bold text-white mb-6 text-center mt-8">此时状态?</h2>
+        <h2 className="text-2xl font-bold text-white mb-6 text-center mt-6 sm:mt-8">此时状态?</h2>
         <div className="space-y-4 flex-1">
           <BigButton 
             label="只是哼唧/翻身" 
@@ -338,10 +338,10 @@ export default function App() {
   // 2. PAUSE (Just Fussing)
   if (view === 'pause') {
     return (
-      <div className="min-h-screen bg-black text-amber-500 p-6 flex flex-col items-center justify-center font-sans text-center relative">
+      <div className="screen-vh bg-black text-amber-500 p-4 sm:p-6 flex flex-col items-center justify-center font-sans text-center relative overflow-hidden">
         <ResetButton />
         <div className="text-sm text-slate-400 uppercase tracking-widest mb-4">The Pause</div>
-        <div className="text-8xl font-mono text-white mb-8 tabular-nums">{formatDuration(timer)}</div>
+        <div className="text-6xl sm:text-8xl font-mono text-white mb-6 sm:mb-8 tabular-nums">{formatDuration(timer)}</div>
         <TipCard title="专家建议">
           给他 10-20 秒，看能否自己接觉。环境保持全黑。
         </TipCard>
@@ -356,9 +356,9 @@ export default function App() {
   // 3. DIAPER: SOOTHE FIRST
   if (view === 'diaper_soothe') {
     return (
-      <div className="min-h-screen bg-black text-amber-500 p-6 flex flex-col font-sans relative">
+      <div className="screen-vh bg-black text-amber-500 p-4 sm:p-6 flex flex-col font-sans relative overflow-hidden">
          <ResetButton />
-         <h2 className="text-2xl font-bold text-red-400 mb-2 mt-8">🛑 停！先不要换！</h2>
+         <h2 className="text-2xl font-bold text-red-400 mb-2 mt-6 sm:mt-8">🛑 停！先不要换！</h2>
          <p className="text-slate-300 mb-6">如果在他崩溃时换尿布，他会彻底清醒。</p>
          
          <div className="flex-1 flex flex-col items-center justify-center">
@@ -378,9 +378,9 @@ export default function App() {
   // 4. DIAPER: CHANGING
   if (view === 'diaper_change') {
     return (
-      <div className="min-h-screen bg-black text-slate-200 p-6 flex flex-col font-sans relative">
+      <div className="screen-vh bg-black text-slate-200 p-4 sm:p-6 flex flex-col font-sans relative overflow-hidden">
          <ResetButton />
-         <h2 className="text-xl font-bold text-white mb-6 mt-8">步骤 2: 慢速更换 (Stealth Change)</h2>
+         <h2 className="text-xl font-bold text-white mb-6 mt-6 sm:mt-8">步骤 2: 慢速更换 (Stealth Change)</h2>
          <TipCard title="暗、慢、少">
            <ul>
              <li>• 仅使用极暗夜灯</li>
@@ -401,9 +401,9 @@ export default function App() {
     const showFeed = hoursSinceFeed > config.feedIntervalHours;
 
     return (
-      <div className="min-h-screen bg-black text-amber-500 p-6 flex flex-col font-sans relative">
+      <div className="screen-vh bg-black text-amber-500 p-4 sm:p-6 flex flex-col font-sans relative overflow-hidden">
         <ResetButton />
-        <h2 className="text-2xl font-bold text-white mb-2 mt-8">安抚 (Soothing)</h2>
+        <h2 className="text-2xl font-bold text-white mb-2 mt-6 sm:mt-8">安抚 (Soothing)</h2>
         <div className="text-sm text-slate-400 mb-6">做“无聊的人肉靠垫”</div>
 
         <div className="space-y-4">
@@ -438,9 +438,9 @@ export default function App() {
   // 6. FEEDING
   if (view === 'feeding') {
     return (
-      <div className="min-h-screen bg-black text-slate-200 p-6 flex flex-col font-sans relative">
+      <div className="screen-vh bg-black text-slate-200 p-4 sm:p-6 flex flex-col font-sans relative overflow-hidden">
          <ResetButton />
-         <h2 className="text-xl font-bold text-white mb-6 mt-8">夜奶 (Night Feed)</h2>
+         <h2 className="text-xl font-bold text-white mb-6 mt-6 sm:mt-8">夜奶 (Night Feed)</h2>
          <TipCard title="注意事项">
            <li>• 喂奶前先抱 1-2 分钟</li>
            <li>• <strong>吃完不拍嗝</strong> (或极轻)</li>
@@ -456,8 +456,8 @@ export default function App() {
 
   // HOME
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 p-6 font-sans flex flex-col">
-      <header className="flex justify-between items-start mb-8">
+    <div className="screen-vh bg-slate-950 text-slate-200 p-4 sm:p-6 font-sans flex flex-col overflow-hidden">
+      <header className="flex justify-between items-start mb-6 sm:mb-8">
         <div>
           <h1 className="text-2xl font-bold text-slate-100 flex items-center gap-2">
             <Moon className="fill-amber-400 text-amber-400" size={24} />
@@ -510,7 +510,7 @@ export default function App() {
         <div className="mt-auto mb-8">
           <button 
             onClick={handleWakeUp}
-            className="w-full aspect-square max-h-80 rounded-full bg-gradient-to-b from-amber-600 to-amber-700 active:from-amber-700 active:to-amber-800 shadow-[0_0_40px_-10px_rgba(245,158,11,0.3)] flex flex-col items-center justify-center text-white transition-all transform hover:scale-105 active:scale-95 mx-auto ring-4 ring-amber-900/30"
+            className="w-full max-w-[66vw] aspect-square max-h-[40vh] sm:max-h-80 rounded-full bg-gradient-to-b from-amber-600 to-amber-700 active:from-amber-700 active:to-amber-800 shadow-[0_0_40px_-10px_rgba(245,158,11,0.3)] flex flex-col items-center justify-center text-white transition-all transform hover:scale-105 active:scale-95 mx-auto ring-4 ring-amber-900/30"
           >
             <AlertCircle size={48} className="mb-2 opacity-90" />
             <span className="text-3xl font-bold">Alaric 醒了</span>
@@ -520,7 +520,7 @@ export default function App() {
 
         {logs.length > 0 && (
           <div className="space-y-3">
-             <div className="space-y-2 max-h-32 overflow-y-auto">
+             <div className="space-y-2 max-h-28 sm:max-h-32 overflow-y-auto">
                {logs.slice(0, 3).map(log => (
                  <div key={log.id} className="flex justify-between text-sm p-3 bg-slate-900 rounded-lg text-slate-400 border border-slate-800">
                     <span>{log.action}</span>

@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --vh: 1vh; /* will be updated by JS to reflect actual viewport height on mobile */
+}
+
+.screen-vh {
+  min-height: calc(var(--vh) * 100);
+  height: calc(var(--vh) * 100);
+}
+
 html, body, #root {
   height: 100%;
 }
